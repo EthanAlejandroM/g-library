@@ -25,3 +25,6 @@ replay_pid*
 
 #VS CODE
 .vscode/
+
+#Pruebas
+prueba.java
