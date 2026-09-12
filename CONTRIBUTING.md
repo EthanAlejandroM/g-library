@@ -52,8 +52,11 @@ g-library/
 ├── docs/
 │   └── ArquitecturaGestionarUsuarios.svg
 ├── .gitignore
-└── README.md|
+├── CONTRIBUTING.md
+└── README.md
 ```
+### MER (modelo entidad relación)
+ [Ver diagrama MER](docs/mer.jpeg)
 
 ## Flujo de trabajo con Git
 Para mantener un orden en el proyecto y evitar problemas entre los cambios de los demás integrantes, es importante seguir el siguiente flujo de trabajo:
@@ -194,7 +197,7 @@ git push origin nombre-rama-donde-estás-trabajando
 >[!IMPORTANT]
 >Asegurate de verificar que hayas pasado todos los cambios recientes de la rama main, si no te saldrá un error. Además recuerda no trabajar sobre la rama `main`.
 
-#### Formato:
+**Formato:**
 
 ```text
 tipo: descripción del cambio
@@ -221,7 +224,7 @@ git commit -m "fix: corregir validación de correo"
 ```
 _________
 
-### Pull request
+### Pull requests
 
 Los PR (Pull request) se utilizan para proponer la integración de cambios realizados en una rama hacia `main`.
 
@@ -246,4 +249,57 @@ El pull request debe explicar de forma breve:
 - Si se realizaron pruebas
 - Si existe algun problema pendiente.
 - Subir una captura de prueba donde se vea la modificación. 
+___________
 
+Una vez que el PR haya sido evaluado y aceptado por los integrantes, se puede realizar el "merge" que corresponde a la integración a la rama `main`.
+
+>[!IMPORTANT]
+>NO hagas merge de tus propias cambios sin que al menos otro integrante los haya revisado, más si los cambios pueden afectar partes del proyecto.
+
+___________
+
+### Issues
+
+Permiten organizar, registrar y dar seguimiento a tareas, errores o mejoras que DEBEN realizarse en el proyecto.
+
+**¿Cuándo crearlo?**
+
+- Cuando hay un error por corregir.
+- Registrar una tarea pendiente.
+
+>[!NOTE]
+>Cuando un PR solucione completamente un Issue se puede utilizar "Closes #numero-issue" en la descripcion del PR. Al integrarlo en main GitHub cierra de forma automática el Issue correspondiente.
+
+*Los Issues son importantes para tareas complejas que requieren comunicación entre los integrantes, si no es necesario, es mejor hacer un PR.*
+
+____
+
+### Resolución de conflictos
+
+Un conflicto ocurre cuando git no puede combinar dos cambios realizados sobre la misma parte de un archivo.
+
+En ese caso, se recomienda **actualizar la rama**.
+
+Si por algun motivo no hiciste este paso, en la interfaz de GitHub va a aparecer que la rama main esta desactualizada a comparación de la rama en la que estemos trabajando. Es por eso que debemos cumplir con el protocolo de **revisar el código y ver con qué versión nos quedamos**.
+
+Posteriormente se guardan los cambios con un commit, por ejemplo:
+
+``` bash
+git add .
+git commit -m "fix: resolver conflicto de merge"
+```
+
+**Recomendaciónes:**
+
+- No aceptar automáticamente una versión sin revisar qué cambios se están descartando.
+
+- Revisar el archivo completo después de resolver el conflicto.
+
+- Comprobar que el proyecto compile correctamente.
+
+- Realizar las pruebas necesarias antes de crear o actualizar el Pull Request.
+
+- Si no se tiene claro qué versión conservar, consultar con el integrante que realizó los cambios.
+
+>[!IMPORTANT]
+>Resolver cuidadosamente los conflictos, ya que una resolución incorrecta puede eliminar cambios hechos por otro integrante.
