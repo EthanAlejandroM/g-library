@@ -1,4 +1,5 @@
-package Service;
+package Service; 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -23,11 +24,10 @@ public class ConexionBD {
         return conexion;
     }
 
-    
     // verificación de conexión
     public static void main(String[] args) {
         Connection cn = hacerConexion();
-        
+
         // Verificar que el objeto no sea nulo y que la conexión siga abierta
         try {
             if (cn != null && !cn.isClosed()) {
@@ -39,5 +39,3 @@ public class ConexionBD {
         }
     }
 }
-
-    
