@@ -79,8 +79,8 @@ cd g-library
 
 3. En el panel izquierdo, clic en **"Nueva"** y crea una base de datos llamada exactamente **`g-library`**.
 
-   >[!IMPORTANT]
-   > El nombre debe ser ese, totalmente igual, ya que es el que `ConexionBD.java` usa para conectarse y si pones otro nombre no te va a conectar y por lo tanto no podras ver los usuarios que registres.
+>[!IMPORTANT]
+> El nombre debe ser ese, totalmente igual, ya que es el que `ConexionBD.java` usa para conectarse y si pones otro nombre no te va a conectar y por lo tanto no podras ver los usuarios que registres.
 
 4. Con `g-library` ya seleccionada en el panel izquierdo, ve a la pestaña **"Importar"** (arriba).
 
@@ -90,8 +90,8 @@ cd g-library
 
 >[!NOTE]
 > Esta base de datos es **local** y todavía no es la definitiva del proyecto: cada integrante crea la suya siguiendo estos mismos pasos, y no comparten datos entre sí (lo que tú registres solo lo ves tú). Es una versión funcional temporal mientras se define una base de datos real. 
- 
- 
+
+
 ### 3. Compilar y ejecutar
 Desde la raíz del proyecto:
 
