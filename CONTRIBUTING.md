@@ -25,8 +25,8 @@ Antes de clonar, instala en tu máquina o verifica que esté instalado:
 
 - **JDK 26** (la versión que usa `pom.xml`). Verifica con `java -version`.
 
-  >[!WARNING]
-  > Si tu JDK es distinto y `mvn clean javafx:run` falla con un error de "release version not supported", instala la nueva versión.
+>[!WARNING]
+> Si tu JDK es distinto y `mvn clean javafx:run` falla con un error de "release version not supported", instala la nueva versión.
 
 - **Apache Maven** 3.9+. Verifica con `mvn -version`.
 
@@ -68,8 +68,8 @@ _______
 
    - Ya deberías tener las tablas `usuario`, `estudiante` y `profesor`.
 
-   >[!NOTE]
-   > Cada integrante crea su propia base de datos local siguiendo estos pasos; por ahora no es una base de datos real, así que los datos que registres no los ve el resto del equipo. 
+>[!NOTE]
+> Cada integrante crea su propia base de datos local siguiendo estos pasos; por ahora no es una base de datos real, así que los datos que registres no los ve el resto del equipo. 
 
 
 2. **Compilar y ejecutar la app:**
