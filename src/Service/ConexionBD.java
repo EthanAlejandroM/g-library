@@ -1,4 +1,5 @@
-package Service;
+package Service; 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -15,7 +16,7 @@ public class ConexionBD {
         try {
             // Carga automática del Driver mediante DriverManager
             conexion = DriverManager.getConnection(URL, USER, PASSWORD);
-            System.out.println("¡Conexión exitosa a la Base de Datos!");
+            System.out.println("¡Conexion exitosa a la Base de Datos!");
         } catch (SQLException e) {
             System.out.println("Error al conectar con la base de datos de XAMPP: " + e.getMessage());
             e.printStackTrace();
@@ -23,15 +24,14 @@ public class ConexionBD {
         return conexion;
     }
 
-    
     // verificación de conexión
     public static void main(String[] args) {
         Connection cn = hacerConexion();
-        
+
         // Verificar que el objeto no sea nulo y que la conexión siga abierta
         try {
             if (cn != null && !cn.isClosed()) {
-                System.out.println(">>> Estado: CONEXIÓN ACTIVA Y FUNCIONANDO CORRECTAMENTE <<<");
+                System.out.println(">>> Estado: CONEXION ACTIVA Y FUNCIONANDO CORRECTAMENTE <<<");
                 cn.close(); // Buena práctica: cerrar la conexión de prueba
             }
         } catch (SQLException e) {
@@ -39,5 +39,3 @@ public class ConexionBD {
         }
     }
 }
-
-    

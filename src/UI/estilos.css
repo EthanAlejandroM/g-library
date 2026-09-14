@@ -1,0 +1,311 @@
+/* .root {
+    -fx-background-color: #F5F3FF;
+}
+
+.titulo {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #5B2C83;
+}
+
+.subtitulo {
+    -fx-font-size: 16px;
+    -fx-text-fill: #555555;
+}
+
+.boton {
+    -fx-background-color: #6C3BAA;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+}
+
+.boton:hover {
+    -fx-background-color: #512A7A;
+} */
+
+/* =========================================================
+   G-LIBRARY — estilos.css
+   Paleta inspirada en el mockup: fondo azul marino, tarjetas
+   celestes con esquinas muy redondeadas, campos gris claro,
+   botón principal amarillo.
+   ========================================================= */
+
+.root {
+    -fx-background-color: #2F4C86;
+    -fx-font-family: "Segoe UI", Verdana, sans-serif;
+}
+/* El padding alrededor del contenido ya no se fija aquí: Interfaz.java lo
+   ajusta según la pantalla (40px en menú/registro, 0 en "Usuarios" para que
+   esa vista pueda ocupar toda la pantalla). */
+
+/* ---------- Tarjeta genérica (menú, registro estudiante/profesor) ---------- */
+
+.card {
+    -fx-background-color: #CFE0FB;
+    -fx-background-radius: 32;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 25, 0, 0, 10);
+}
+
+/* ---------- Franja / encabezado azul ---------- */
+
+.header-bar {
+    -fx-background-color: #5D74C7;
+    -fx-background-radius: 32 32 0 0;
+}
+
+.boton-volver {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-padding: 2 10;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+}
+.boton-volver:hover {
+    -fx-background-color: rgba(255,255,255,0.18);
+}
+
+.icono-header {
+    -fx-font-size: 30px;
+}
+
+.titulo-header {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.subtitulo-header {
+    -fx-font-size: 14px;
+    -fx-text-fill: #E4E9FB;
+}
+
+/* Título y subtítulo grandes (pantalla de menú) */
+.titulo {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+.subtitulo {
+    -fx-font-size: 14px;
+    -fx-text-fill: #E4E9FB;
+}
+
+/* ---------- Cuerpo del formulario ---------- */
+
+.cuerpo-formulario {
+    -fx-background-color: transparent;
+}
+
+.etiqueta-campo {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A8A;
+}
+
+.campo-texto, .campo-combo {
+    -fx-background-color: #F2F2F0;
+    -fx-background-radius: 16;
+    -fx-border-color: transparent;
+    -fx-padding: 9 14;
+    -fx-font-size: 13px;
+}
+.campo-texto:focused, .campo-combo:focused {
+    -fx-background-color: #FFFFFF;
+    -fx-effect: dropshadow(gaussian, rgba(93,116,199,0.55), 6, 0, 0, 0);
+}
+.campo-combo .list-cell {
+    -fx-background-color: #F2F2F0;
+    -fx-padding: 4 10;
+}
+
+/* ---------- Pie del formulario ---------- */
+
+.pie-formulario {
+    -fx-background-color: transparent;
+}
+
+.enlace-pie {
+    -fx-text-fill: #1E3A8A;
+    -fx-font-size: 12.5px;
+    -fx-border-color: transparent;
+}
+.enlace-pie:hover {
+    -fx-underline: true;
+}
+
+/* ---------- Botones principales (amarillo) ---------- */
+
+.boton-primario {
+    -fx-background-color: #FBF3A9;
+    -fx-background-radius: 24;
+    -fx-text-fill: #1E3A8A;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 42;
+    -fx-cursor: hand;
+}
+.boton-primario:hover {
+    -fx-background-color: #F7EC80;
+}
+.boton-primario:pressed {
+    -fx-background-color: #EFE271;
+}
+
+/* Botones del menú principal (mismo estilo, ancho fijo) */
+.boton-menu {
+    -fx-background-color: #FBF3A9;
+    -fx-background-radius: 22;
+    -fx-text-fill: #1E3A8A;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 20;
+    -fx-cursor: hand;
+}
+.boton-menu:hover {
+    -fx-background-color: #F7EC80;
+}
+
+/* Conservamos ".boton" por compatibilidad, con la misma línea visual */
+.boton {
+    -fx-background-color: #FBF3A9;
+    -fx-text-fill: #1E3A8A;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+}
+.boton:hover {
+    -fx-background-color: #F7EC80;
+}
+
+/* =========================================================
+   PANTALLA "Usuarios registrados" (sidebar + tabla)
+   ========================================================= */
+
+.sidebar {
+    -fx-background-color: #4C63B6;
+    -fx-padding: 30 22;
+}
+
+.sidebar-section-padding {
+    -fx-padding: 0 22;
+}
+
+.sidebar-registros-container {
+    -fx-padding: 0;
+}
+
+
+.sidebar-logo-icon {
+    -fx-font-size: 20px;
+}
+.sidebar-logo {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.sidebar-subtitulo {
+    -fx-text-fill: #E4E9FB;
+    -fx-font-size: 12.5px;
+}
+
+/* Ítem de navegación del sidebar: por defecto se funde con el azul del
+   contenedor; al hacer clic (quedar posicionado en esa sección) se pone
+   amarillo y se queda así -no vuelve a azul al soltar el clic ni al mover
+   el mouse-, gracias al ToggleGroup en PanelUsuarios.java. */
+.sidebar-nav-item {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-text-fill: #E4E9FB;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+
+    -fx-background-radius: 0 22 22 0;
+
+    -fx-padding: 10 22;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.sidebar-nav-item:hover {
+    -fx-background-color: rgba(255,255,255,0.14);
+    -fx-text-fill: white;
+}
+.sidebar-nav-item:armed {
+    -fx-background-color: rgba(255,255,255,0.22);
+}
+.sidebar-nav-item:selected {
+    -fx-background-color: #FBF3A9;
+    -fx-text-fill: #1E3A8A;
+}
+.sidebar-nav-item:selected:hover {
+    -fx-background-color: #F7EC80;
+}
+
+.sidebar-nav-secundario {
+    -fx-text-fill: #E4E9FB;
+    -fx-font-size: 12.5px;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-padding: 8 4;
+}
+.sidebar-nav-secundario:hover {
+    -fx-text-fill: white;
+    -fx-underline: true;
+}
+
+.contenido-usuarios {
+    -fx-background-color: #F4F6FC;
+    -fx-padding: 30 34;
+}
+
+.titulo-usuarios {
+    -fx-font-size: 21px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A8A;
+}
+
+/* ---------- Tabla ---------- */
+
+.tabla-usuarios {
+    -fx-background-color: transparent;
+    -fx-background-radius: 18;
+}
+.tabla-usuarios .column-header-background {
+    -fx-background-color: #C9D3FA;
+    -fx-background-radius: 14 14 0 0;
+}
+.tabla-usuarios .column-header, .tabla-usuarios .filler {
+    -fx-background-color: transparent;
+    -fx-size: 38px;
+}
+.tabla-usuarios .column-header .label {
+    -fx-text-fill: #1E3A8A;
+    -fx-font-weight: bold;
+    -fx-font-size: 12.5px;
+    -fx-alignment: CENTER_LEFT;
+}
+.tabla-usuarios .table-row-cell {
+    -fx-background-color: #F5F6FA;
+    -fx-border-color: transparent transparent #E3E6F5 transparent;
+}
+.tabla-usuarios .table-row-cell:odd {
+    -fx-background-color: #ECEFFB;
+}
+.tabla-usuarios .table-row-cell:selected {
+    -fx-background-color: #C9D3FA;
+}
+.tabla-usuarios .table-cell {
+    -fx-text-fill: #333333;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 12.5px;
+    -fx-padding: 8 10;
+}
