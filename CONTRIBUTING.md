@@ -7,16 +7,36 @@
 
 ## INDICE
 
+- [Requisitos del entorno de desarrollo](#requisitos-del-entorno-de-desarrollo)
 - [Instalación](#instalación)
 - [Estructura del proyecto](#estructura-del-proyecto)
 - [Flujo de trabajo con Git](#flujo-de-trabajo-con-git)
 - [Ramas](#ramas)
 - [Commits](#commits)
 - [Pull Requests](#pull-requests)
-- [Issues](#Issues)
+- [Issues](#issues)
 - [Resolución de conflictos](#resolución-de-conflictos)
 
 ________
+
+### Requisitos del entorno de desarrollo
+
+Antes de clonar, instala en tu máquina o verifica que esté instalado:
+
+- **JDK 26** (la versión que usa `pom.xml`). Verifica con `java -version`.
+
+  >[!WARNING]
+  > Si tu JDK es distinto y `mvn clean javafx:run` falla con un error de "release version not supported", instala la nueva versión.
+
+- **Apache Maven** 3.9+. Verifica con `mvn -version`.
+
+- **XAMPP** (módulo MySQL). La app se conecta por defecto a `localhost:3306`, usuario `root`, sin contraseña.
+
+- **Git**.
+
+>[!TIP]
+> Si usas VS Code, instala la extensión **"Extension Pack for Java"** y deja que sea Maven quien administre las dependencias (JavaFX, MySQL Connector) desde `pom.xml`. No es necesario descargar `.jar` manualmente ni configurarlos como *referenced libraries* en `.vscode/settings.json`: esa carpeta está en `.gitignore` porque su configuración es local, así que si algo no compila para ti, probablemente sea justamente por una referencia manual desactualizada en tu propio `settings.json`.
+
 
 ### Instalación
 
@@ -35,28 +55,70 @@ Y ya lo tienes como repositorio local :D !
 
 _______
 
+
+### Ejecución
+
+1. **Crear la base de datos con phpMyAdmin.**
+
+   - Inicia el módulo **MySQL** desde el XAMPP Control Panel (Apache no es necesario) y entra a `http://localhost/phpmyadmin`.
+
+   - Crea una base de datos llamada exactamente **`g-library`** (panel izquierdo → **"Nueva"**). El nombre tiene que ser ese, porque es el que usa `ConexionBD.java` para conectarse.
+
+   - Selecciona `g-library` y ve a la pestaña **"Importar"** → elige el archivo [`database/BibliotecaBO`](database/BibliotecaBO) → **"Continuar"**.
+
+   - Ya deberías tener las tablas `usuario`, `estudiante` y `profesor`.
+
+   >[!NOTE]
+   > Cada integrante crea su propia base de datos local siguiendo estos pasos; por ahora no es una base de datos real, así que los datos que registres no los ve el resto del equipo. 
+
+
+2. **Compilar y ejecutar la app:**
+
+```bash
+mvn clean javafx:run
+```
+
+Maven descarga JavaFX y el conector de MySQL automáticamente la primera vez, así que esa ejecución puede tardar un poco más.
+
+>[!IMPORTANT]
+> Antes de subir cualquier cambio, corre `mvn clean javafx:run` de nuevo y prueba manualmente el flujo afectado (registrar estudiante/profesor, ver el listado, etc.). Este proyecto todavía no tiene pruebas automatizadas, así que la verificación manual es la única red de seguridad que tenemos.
+
+Para más detalle sobre requisitos y tecnologías, revisa el [README](README.md).
+
+_______
+
 ### Estructura del proyecto
 
 ```text
 g-library/
-├── src/
-│   ├── UI/
-│   │   └── Interfaz.java
-│   ├── Business/
-│   │   └── GestionUsuario.java
-│   └── Service/
-│       ├── ConexionBD.java
-│       ├── EstudianteDAO.java
-│       ├── ProfesorDAO.java
-│       └── UsuarioDAO.java
+├── database/
+│   └── BibliotecaBO          
 ├── docs/
-│   └── ArquitecturaGestionarUsuarios.svg
+│   ├── Arquitectura.svg
+│   ├──DiagramaClases.svg
+│   └── mer.jpeg
+├── src/
+│   ├── Business/
+│   │   └── GestionUsuario.java      
+│   ├── Service/
+│   │   ├── ConexionBD.java          
+│   │   ├── UsuarioDAO.java          
+│   │   ├── EstudianteDAO.java       
+│   │   ├── ProfesorDAO.java         
+│   │   ├── UsuarioConsultaDAO.java  
+│   │   └── UsuarioVista.java        
+│   └── UI/
+│       ├── Interfaz.java            
+│       ├── PanelEstudiante.java     
+│       ├── PanelProfesor.java       
+│       ├── PanelUsuarios.java       
+│       └── estilos.css              
 ├── .gitignore
+├── config.properties.example
 ├── CONTRIBUTING.md
+├── pom.xml
 └── README.md
 ```
-### MER (modelo entidad relación)
- [Ver diagrama MER](docs/mer.jpeg)
 
 ## Flujo de trabajo con Git
 Para mantener un orden en el proyecto y evitar problemas entre los cambios de los demás integrantes, es importante seguir el siguiente flujo de trabajo:
